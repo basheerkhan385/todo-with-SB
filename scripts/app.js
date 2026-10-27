@@ -29,23 +29,14 @@ let currentUser = null;
 // ========================================
 
 const checkUser = async () => {
-
     const response = await supabaseClient.auth.getUser();
 
-
     if (response.error || !response.data.user) {
-
         window.location.href = "signin.html";
-
         return false;
     }
 
-
     currentUser = response.data.user;
-
-
-    console.log("Logged in user:", currentUser);
-
 
     return true;
 };
@@ -241,24 +232,15 @@ logoutButton.addEventListener("click", async () => {
 
 const startApp = async () => {
 
-
     const isLoggedIn = await checkUser();
 
-
     if (!isLoggedIn) {
-
         return;
     }
 
-
     showTodo();
-
 };
 
-
-// Form submit
 form.addEventListener("submit", addTodo);
 
-
-// Start application
 startApp();
