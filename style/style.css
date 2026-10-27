@@ -1,0 +1,607 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f6f8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    color: #222;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    width: 100%;
+    max-width: 600px;
+
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+h1 {
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 25px;
+
+    color: #222;
+}
+
+
+/* =========================================
+   FORMS
+========================================= */
+
+form {
+    width: 100%;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #d0d5db;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+input:focus {
+    border-color: #333;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+
+input::placeholder {
+    color: #888;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+button {
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 13px 20px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background: #222;
+
+    color: white;
+
+    transition:
+        background 0.2s ease,
+        transform 0.1s ease;
+}
+
+
+button:hover {
+    background: #444;
+}
+
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   SIGN IN / SIGN UP BUTTON
+========================================= */
+
+#login-form button,
+#signup-form button {
+    width: 100%;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+#error {
+    min-height: 22px;
+
+    margin-top: 10px;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+p {
+    line-height: 1.5;
+}
+
+
+.container > p:last-child {
+    text-align: center;
+
+    margin-top: 18px;
+
+    color: #666;
+
+    font-size: 15px;
+}
+
+
+a {
+    color: #222;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   TODO HEADER
+========================================= */
+
+.todo-header {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.todo-header h1 {
+    margin: 0;
+
+    text-align: left;
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+#logout {
+    background: #d93636;
+
+    padding: 10px 16px;
+
+    white-space: nowrap;
+}
+
+
+#logout:hover {
+    background: #b82c2c;
+}
+
+
+/* =========================================
+   TODO FORM
+========================================= */
+
+#form {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+#form input {
+    flex: 1;
+
+    margin-bottom: 0;
+}
+
+
+#submit {
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   TODO LIST
+========================================= */
+
+.todos-list {
+    width: 100%;
+
+    list-style: none;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   TODO ITEM
+========================================= */
+
+.todo-item {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 14px 15px;
+
+    margin-bottom: 12px;
+
+    background: #f7f7f7;
+
+    border: 1px solid #e4e4e4;
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+.todo-item:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================
+   TODO TEXT
+========================================= */
+
+.todo-item span {
+    flex: 1;
+
+    min-width: 0;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   DELETE BUTTON
+========================================= */
+
+.delete-button {
+    flex-shrink: 0;
+
+    background: #d93636;
+
+    padding: 9px 14px;
+
+    font-size: 14px;
+}
+
+
+.delete-button:hover {
+    background: #b82c2c;
+}
+
+
+/* =========================================
+   TABLET
+   768px and below
+========================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 16px;
+    }
+
+
+    .container {
+        max-width: 550px;
+
+        padding: 25px;
+    }
+
+
+    h1 {
+        font-size: 28px;
+    }
+
+
+    .todo-item {
+        padding: 13px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   600px and below
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+
+        align-items: flex-start;
+
+        padding-top: 30px;
+    }
+
+
+    .container {
+        width: 100%;
+
+        padding: 20px;
+
+        border-radius: 12px;
+    }
+
+
+    h1 {
+        font-size: 25px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* Todo header */
+
+    .todo-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+    }
+
+
+    .todo-header h1 {
+        text-align: center;
+    }
+
+
+    #logout {
+        width: 100%;
+    }
+
+
+    /* Todo form */
+
+    #form {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+
+    #form input {
+        width: 100%;
+    }
+
+
+    #submit {
+        width: 100%;
+    }
+
+
+    /* Todo item */
+
+    .todo-item {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+    }
+
+
+    .todo-item span {
+        width: 100%;
+    }
+
+
+    .delete-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   480px and below
+========================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 10px;
+
+        padding-top: 20px;
+    }
+
+
+    .container {
+        padding: 18px;
+
+        border-radius: 10px;
+    }
+
+
+    h1 {
+        font-size: 23px;
+    }
+
+
+    input {
+        padding: 12px;
+
+        font-size: 15px;
+    }
+
+
+    button {
+        padding: 12px;
+
+        font-size: 15px;
+    }
+
+
+    .todo-item {
+        padding: 12px;
+    }
+
+
+    .todo-item span {
+        font-size: 15px;
+    }
+
+
+    .delete-button {
+        font-size: 14px;
+    }
+
+
+    .container > p:last-child {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES
+   360px and below
+========================================= */
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 8px;
+
+        padding-top: 15px;
+    }
+
+
+    .container {
+        padding: 15px;
+    }
+
+
+    h1 {
+        font-size: 21px;
+    }
+
+
+    input {
+        padding: 11px;
+
+        font-size: 14px;
+    }
+
+
+    button {
+        padding: 11px;
+
+        font-size: 14px;
+    }
+
+
+    .todo-item {
+        padding: 10px;
+    }
+
+}
